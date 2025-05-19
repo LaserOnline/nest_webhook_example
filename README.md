@@ -1,5 +1,15 @@
 # NestJS Webhook
 
+- run project
+```
+docker compose up --build
+```
+
+- down project
+```
+docker compose down -v
+```
+
 - path swagger
 ```
 /swagger
