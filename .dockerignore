@@ -1,0 +1,7 @@
+node_modules
+dist
+.vscode
+README.md
+docker-compose.yaml
+dockerfile.nest
+dockerfile.web

@@ -1,0 +1,15 @@
+services:
+  nginx:
+    container_name: web_example
+    build:
+      context: .
+      dockerfile: dockerfile.web
+    ports:
+      - '80:80'
+  nestjs:
+    container_name: nestjs_webhook
+    build:
+      context: .
+      dockerfile: dockerfile.nest
+    ports:
+      - '3000:3000'

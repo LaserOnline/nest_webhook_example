@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Test Webhook</title>
+  </head>
+  <body>
+    <h1>Data Webhook</h1>
+
+    <div id="output"></div>
+
+    <script>
+      const source = new EventSource('/webhook/data');
+
+      source.onmessage = function (event) {
+        const outputDiv = document.getElementById('output');
+        try {
+          const parsed = JSON.parse(event.data);
+          outputDiv.innerHTML = `<ul>${parsed.map((item) => `<li>${item}</li>`).join('')}</ul>`;
+        } catch (e) {
+          outputDiv.textContent = event.data;
+        }
+      };
+    </script>
+  </body>
+</html>
